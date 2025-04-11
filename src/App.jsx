@@ -13,7 +13,7 @@ const App = () => {
     <div>
       <Navbar />
 
-      <main>
+      <main className="pt-16">
         <div id="home">
           <Home />
         </div>

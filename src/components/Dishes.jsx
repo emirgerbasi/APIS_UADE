@@ -9,8 +9,8 @@ import DishesCard from "../layouts/DishesCard";
 
 const Dishes = () => {
   return (
-    <div className=" min-h-screen flex flex-col justify-center items-center lg:px-32 px-5">
-      <h1 className=" text-4xl font-semibold text-center pt-24 pb-10">
+    <div className="py-16 flex flex-col justify-center items-center lg:px-32 px-5">
+      <h1 className="text-4xl font-semibold text-center pb-10">
         Nuestros Platos
       </h1>
 
