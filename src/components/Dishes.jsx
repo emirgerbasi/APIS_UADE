@@ -15,12 +15,12 @@ const Dishes = () => {
       </h1>
 
       <div className=" flex flex-wrap gap-8 justify-center">
-        <DishesCard img={img1} title="Tasty Dish" price="$35.000" />
-        <DishesCard img={img2} title="Tasty Dish" price="$45.000" />
-        <DishesCard img={img3} title="Tasty Dish" price="$38.000" />
-        <DishesCard img={img4} title="Tasty Dish" price="$39.000" />
-        <DishesCard img={img5} title="Tasty Dish" price="$41.000" />
-        <DishesCard img={img6} title="Tasty Dish" price="$43.000" />
+        <DishesCard img={img1} title="Plato" price="$35.000" />
+        <DishesCard img={img2} title="Plato" price="$45.000" />
+        <DishesCard img={img3} title="Plato" price="$38.000" />
+        <DishesCard img={img4} title="Plato" price="$39.000" />
+        <DishesCard img={img5} title="Plato" price="$41.000" />
+        <DishesCard img={img6} title="Plato" price="$43.000" />
       </div>
     </div>
   );

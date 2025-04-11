@@ -6,5 +6,23 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Estilos para las tarjetas */
+.shadow-\[rgba\(0\,_0\,_0\,_0\.24\)_0px_3px_8px\] {
+  background-color: #ffffff !important;
+  color: #000000;
+}
+
+.text-4xl {
+  color: #ffffff;
+}
+
+/* Asegurar que los textos dentro de las tarjetas sean visibles */
+.shadow-\[rgba\(0\,_0\,_0\,_0\.24\)_0px_3px_8px\] h3,
+.shadow-\[rgba\(0\,_0\,_0\,_0\.24\)_0px_3px_8px\] p {
+  color: #000000;
 }
 
