@@ -5,7 +5,11 @@ import Button from "../layouts/Button";
 const About = () => {
   return (
     <div className="py-16 flex flex-col lg:flex-row justify-center items-center lg:px-32 px-5">
-      <img src={img} alt="img" />
+      <img 
+        src={img} 
+        alt="img" 
+        className="transition-transform duration-300 hover:scale-110 cursor-pointer"
+      />
 
       <div className="space-y-4">
         <h1 className="text-4xl font-semibold text-center md:text-start pb-10">

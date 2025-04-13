@@ -10,7 +10,11 @@ const ReviewCard = (props) => {
       </div>
 
       <div className=" flex flex-row justify-center items-center mt-4 gap-4">
-        <img className=" rounded-full w-1/4" src={props.img} alt="img" />
+        <img 
+          className="rounded-full w-1/4 transition-transform duration-300 hover:scale-125 cursor-pointer" 
+          src={props.img} 
+          alt="img" 
+        />
         <h3 className="font-semibold text-white">{props.name}</h3>
       </div>
     </div>
