@@ -1,8 +1,8 @@
 import React from "react";
 import ReviewCard from "../layouts/ReviewCard";
-import img1 from "../assets/img/pic1.png";
-import img2 from "../assets/img/pic2.png";
-import img3 from "../assets/img/pic3.png";
+import imgEmir from "../assets/img/imgEmi.jpg";
+import imgTomas from "../assets/img/imgTomas.jpg";
+import imgArthur from "../assets/img/imgArthur.jpg";
 
 const Review = () => {
   return (
@@ -11,9 +11,9 @@ const Review = () => {
         Reseñas de clientes
       </h1>
       <div className="flex flex-col md:flex-row gap-5">
-        <ReviewCard img={img1} name="Emir Gerbasi" />
-        <ReviewCard img={img2} name="Tomas Bermejo" />
-        <ReviewCard img={img3} name="Arthur Callomamani" />
+        <ReviewCard img={imgEmir} name="Emir Gerbasi" />
+        <ReviewCard img={imgTomas} name="Tomas Bermejo" />
+        <ReviewCard img={imgArthur} name="Arthur Callomamani" />
       </div>
     </div>
   );
