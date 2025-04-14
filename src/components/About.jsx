@@ -16,11 +16,9 @@ const About = () => {
           ¿Por qué elegirnos?
         </h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-          architecto quisquam delectus minima perferendis nulla quia nisi
-          laborum, exercitationem cum quo accusantium, impedit sed. Dicta, quo
-          molestias omnis reprehenderit quae animi? Explicabo quasi accusamus
-          laboriosam temporibus delectus, aut a? Quasi?
+        En Il Vero Ristorante creemos que la comida es mucho más que sabores: es tradición, 
+        encuentro y emoción. Nacimos con la idea de traer un pedacito de Italia a tu mesa,
+        con recetas que honran a las nonnas y una atención que te hace sentir en casa.
         </p>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi,

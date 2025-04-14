@@ -8,7 +8,7 @@ const Menu = () => {
   return (
     <div className="py-16 flex flex-col justify-center items-center lg:px-32 px-5">
       <h1 className=" text-4xl font-semibold text-center pb-10">
-        Premium Menú
+        Nuestros recomendados del mes
       </h1>
 
       <div className=" flex flex-wrap gap-8 justify-center">

@@ -15,12 +15,12 @@ const Dishes = () => {
       </h1>
 
       <div className=" flex flex-wrap gap-8 justify-center">
-        <DishesCard img={img1} title="Plato" price="$35.000" />
-        <DishesCard img={img2} title="Plato" price="$45.000" />
-        <DishesCard img={img3} title="Plato" price="$38.000" />
-        <DishesCard img={img4} title="Plato" price="$39.000" />
-        <DishesCard img={img5} title="Plato" price="$41.000" />
-        <DishesCard img={img6} title="Plato" price="$43.000" />
+        <DishesCard img={img1} title="Bruschettas" price="$35.000" />
+        <DishesCard img={img2} title="Melanzane alla parmigiana" price="$45.000" />
+        <DishesCard img={img3} title="Focaccia casera con romero y aceite de oliva" price="$38.000" />
+        <DishesCard img={img4} title="Pizza Napoletana" price="$39.000" />
+        <DishesCard img={img5} title="Ñoquis di patata" price="$41.000" />
+        <DishesCard img={img6} title="Tiramisú" price="$43.000" />
       </div>
     </div>
   );

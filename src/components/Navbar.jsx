@@ -63,7 +63,7 @@ const Navbar = () => {
                     duration={500}
                     className="text-gray-800 hover:text-brightColor transition-all cursor-pointer"
                   >
-                    Spicy
+                    Entradas
                   </Link>
                 </li>
                 <li>
@@ -74,7 +74,7 @@ const Navbar = () => {
                     duration={500}
                     className="text-gray-800 hover:text-brightColor transition-all cursor-pointer"
                   >
-                    Tasty
+                    Pizzas
                   </Link>
                 </li>
                 <li>
@@ -85,7 +85,7 @@ const Navbar = () => {
                     duration={500}
                     className="text-gray-800 hover:text-brightColor transition-all cursor-pointer"
                   >
-                    Delicious
+                    Pastas
                   </Link>
                 </li>
                 <li>
@@ -96,7 +96,7 @@ const Navbar = () => {
                     duration={500}
                     className="text-gray-800 hover:text-brightColor transition-all cursor-pointer"
                   >
-                    Crispy
+                    Postres
                   </Link>
                 </li>
               </ul>

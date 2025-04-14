@@ -55,7 +55,7 @@ const Footer = () => {
               className=" hover:text-brightColor transition-all cursor-pointer"
               href="/"
             >
-              Menú Premium
+              Recomendados del mes
             </a>
           </nav>
         </div>
@@ -78,7 +78,7 @@ const Footer = () => {
               className=" hover:text-brightColor transition-all cursor-pointer"
               href="/"
             >
-              Redes sociales
+              Cerviño 3423, Buenos Aires
             </a>
           </nav>
         </div>
