@@ -68,7 +68,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link
-                    to="dishes"
+                    to="pizzas"
                     spy={true}
                     smooth={true}
                     duration={500}
@@ -79,7 +79,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link
-                    to="dishes"
+                    to="pastas"
                     spy={true}
                     smooth={true}
                     duration={500}
@@ -90,7 +90,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link
-                    to="dishes"
+                    to="postres"
                     spy={true}
                     smooth={true}
                     duration={500}

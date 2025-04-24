@@ -9,9 +9,7 @@ const Home = () => {
           Sentí la cocina italiana en cada bocado.
         </h1>
         <p className=" text-backgroundColor">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis et qui,
-          maxime assumenda repellat corrupti officia dolorum delectus labore
-          deleniti?
+        Una selección de platos elaborados con pasión, ingredientes frescos y el verdadero espíritu italiano.
         </p>
         {/* <div className=" lg:pl-44">
           <Button title="Order Now" />

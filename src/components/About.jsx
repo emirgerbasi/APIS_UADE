@@ -8,7 +8,7 @@ const About = () => {
       <img 
         src={img} 
         alt="img" 
-        className="transition-transform duration-300 hover:scale-110 cursor-pointer"
+        className="transition-transform duration-20 hover:scale-110 cursor-pointer"
       />
 
       <div className="space-y-4">
@@ -19,11 +19,6 @@ const About = () => {
         En Il Vero Ristorante creemos que la comida es mucho más que sabores: es tradición, 
         encuentro y emoción. Nacimos con la idea de traer un pedacito de Italia a tu mesa,
         con recetas que honran a las nonnas y una atención que te hace sentir en casa.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi,
-          suscipit reiciendis accusamus recusandae eum aspernatur pariatur odit
-          veritatis facere. Magnam!
         </p>
         <div className=" flex justify-center lg:justify-start">
           <Button title="Learn More" />
