@@ -2,7 +2,7 @@ import React from "react";
 
 const ReviewCard = (props) => {
   return (
-    <div className="w-full md:w-1/3 border-2 border-gray-400 md:border-none p-5 rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]" style={{backgroundColor: '#DCCABC'}}>
+    <div className="w-full md:w-1/3 border-2 border-gray-400 md:border-none p-5 rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] bg-[#F4ECE3]">
       <div>
         <p style={{color: '#111'}}>
           {props.review}
