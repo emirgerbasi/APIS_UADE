@@ -119,7 +119,7 @@ const Navbar = () => {
               duration={500}
               className="hover:text-brightColor transition-all cursor-pointer"
             >
-              Menú
+              Recomendados
             </Link>
 
             <Link
@@ -186,7 +186,7 @@ const Navbar = () => {
             className="hover:text-brightColor transition-all cursor-pointer"
             onClick={closeMenu}
           >
-            Menú
+            Platos
           </Link>
           <Link
             to="review"
