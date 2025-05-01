@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -7,36 +8,46 @@ import Footer from "./components/Footer";
 import Dishes from "./components/Dishes";
 import Reviews from "./components/Review";
 import Review from "./components/Review";
+import RecipeDetails from "./components/RecipeDetails";
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
+    <Router>
+      <div>
+        <Navbar />
 
-      <main className="pt-16">
-        <div id="home">
-          <Home />
-        </div>
+        <main className="pt-16">
+          <Routes>
+            <Route path="/" element={
+              <>
+                <div id="home">
+                  <Home />
+                </div>
 
-        <div id="dishes">
-          <Dishes />
-        </div>
+                <div id="dishes">
+                  <Dishes />
+                </div>
 
-        <div id="about">
-          <About />
-        </div>
+                <div id="about">
+                  <About />
+                </div>
 
-        <div id="menu">
-          <Menu />
-        </div>
+                <div id="menu">
+                  <Menu />
+                </div>
 
-        <div id="review">
-          <Review />
-        </div>
-      </main>
+                <div id="review">
+                  <Review />
+                </div>
+              </>
+            } />
+            <Route path="/recetas/:nombreReceta" element={<RecipeDetails />} />
+          </Routes>
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </Router>
   );
 };
 
