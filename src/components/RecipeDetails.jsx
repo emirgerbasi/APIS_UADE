@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import img1 from "../assets/img/img1.jpg";
 import img2 from "../assets/img/img2.jpg";
 import img3 from "../assets/img/img3.jpg";
@@ -116,6 +116,7 @@ const recipes = [
 ];
 
 const RecipeDetails = () => {
+  const navigate = useNavigate();
   const { nombreReceta } = useParams();
   // Convert URL parameter back to original format
   const originalNombre = nombreReceta.replace(/-/g, ' ');
@@ -131,6 +132,11 @@ const RecipeDetails = () => {
         <h1 className="text-4xl font-semibold text-center mb-8 text-white">{recipe.nombre}</h1>
         
         <div className="space-y-8">
+          {recipe.descripcion && (
+            <div className="space-y-4">
+              <p className="text-lg leading-relaxed text-white">{recipe.descripcion}</p>
+            </div>
+          )}
           <div className="aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden">
             <img
               className="w-full h-full object-cover"
@@ -166,6 +172,12 @@ const RecipeDetails = () => {
               <p className="text-white">Apto para celiacos: {recipe.apto_celiacos ? 'Sí' : 'No'}</p>
               <p className="text-white">Alergenos: {recipe.alergenos.join(', ')}</p>
             </div>
+            <button 
+              onClick={() => navigate(-1)}
+              className="mt-8 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors w-fit mx-auto"
+            >
+              ← Regresar
+            </button>
           </div>
         </div>
       </div>
