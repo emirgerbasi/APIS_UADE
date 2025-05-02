@@ -7,8 +7,8 @@ import Menu from "./components/Menu";
 import Footer from "./components/Footer";
 import Dishes from "./components/Dishes";
 import Reviews from "./components/Review";
-import Review from "./components/Review";
 import RecipeDetails from "./components/RecipeDetails";
+import CustomerReviews from "./components/CustomerReviews";
 
 const App = () => {
   return (
@@ -37,7 +37,7 @@ const App = () => {
                 </div>
 
                 <div id="review">
-                  <Review />
+                  <CustomerReviews />
                 </div>
               </>
             } />
