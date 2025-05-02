@@ -135,12 +135,7 @@ const RecipeDetails = () => {
         <h1 className="text-4xl font-semibold text-center mb-8 text-white">{recipe.nombre}</h1>
         
         <div className="space-y-8">
-          {recipe.descripcion && (
-            <div className="space-y-4">
-              <p className="text-lg leading-relaxed text-white">{recipe.descripcion}</p>
-            </div>
-          )}
-          <div className="aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden">
+          <div className="aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden w-3/4 mx-auto">
             <img
               className="w-full h-full object-cover"
               src={
@@ -164,12 +159,12 @@ const RecipeDetails = () => {
             />
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 w-3/4 mx-auto">
             <h2 className="text-2xl font-semibold text-white">Descripción</h2>
             <p className="text-white leading-relaxed">{recipe.descripcion}</p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 w-3/4 mx-auto">
             <h2 className="text-2xl font-semibold text-white">Información Nutricional</h2>
             <div className="space-y-2">
               <p className="text-white">Apto para celiacos: {recipe.apto_celiacos ? 'Sí' : 'No'}</p>
@@ -177,7 +172,7 @@ const RecipeDetails = () => {
             </div>
             <button 
               onClick={() => navigate(-1)}
-              className="mt-8 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors w-fit mx-auto"
+              className="mt-8 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors w-full"
             >
               ← Regresar
             </button>
