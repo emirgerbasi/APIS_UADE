@@ -14,49 +14,39 @@ const Footer = () => {
           </p>
         </div>
         <div>
-          <h1 className=" font-medium text-xl pb-4 pt-5 md:pt-0">Links</h1>
+          <h1 className=" font-medium text-xl pb-4 pt-5 md:pt-0">Nuestras Sucursales</h1>
           <nav className=" flex flex-col gap-2">
             <a
               className=" hover:text-brightColor transition-all cursor-pointer"
-              href="/"
+              href="https://www.google.com/maps/search/palermo+buenos+aires" target="_blank" rel="noopener noreferrer"
             >
-              Platos
+              Palermo
             </a>
             <a
               className=" hover:text-brightColor transition-all cursor-pointer"
-              href="/"
+              href="https://www.google.com/maps/search/recoleta+buenos+aires" target="_blank" rel="noopener noreferrer"
             >
-              Sobre nosotros
+              Recoleta
             </a>
-            <a
-              className=" hover:text-brightColor transition-all cursor-pointer"
-              href="/"
-            >
-              Menú
-            </a>
-            <a
-              className=" hover:text-brightColor transition-all cursor-pointer"
-              href="/"
-            >
-              Reseñas
-            </a>
+
           </nav>
         </div>
         <div>
-          <h1 className=" font-medium text-xl pb-4 pt-5 md:pt-0">Menú</h1>
+          <h1 className=" font-medium text-xl pb-4 pt-5 md:pt-0">Redes Sociales</h1>
           <nav className=" flex flex-col gap-2">
             <a
               className=" hover:text-brightColor transition-all cursor-pointer"
-              href="/"
+              href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"
             >
-              Nuestros platos
+              <BsFacebook className="inline-block mr-2" /> Facebook
             </a>
             <a
               className=" hover:text-brightColor transition-all cursor-pointer"
-              href="/"
+              href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"
             >
-              Recomendados del mes
+              <RiTwitterXFill className="inline-block mr-2" /> Twitter
             </a>
+
           </nav>
         </div>
         <div>
@@ -64,22 +54,17 @@ const Footer = () => {
           <nav className=" flex flex-col gap-2">
             <a
               className=" hover:text-brightColor transition-all cursor-pointer"
-              href="/"
+              href="mailto:info@ilveroristorante.com" target="_blank" rel="noopener noreferrer"
             >
               info@ilveroristorante.com
             </a>
             <a
               className=" hover:text-brightColor transition-all cursor-pointer"
-              href="/"
+              href="tel:+54113456789" target="_blank" rel="noopener noreferrer"
             >
               +54 113 456 789
             </a>
-            <a
-              className=" hover:text-brightColor transition-all cursor-pointer"
-              href="/"
-            >
-              Cerviño 3423, Buenos Aires
-            </a>
+
           </nav>
         </div>
       </div>
