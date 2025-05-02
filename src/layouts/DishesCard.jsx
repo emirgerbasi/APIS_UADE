@@ -8,8 +8,8 @@ const DishesCard = (props) => {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    // Format the recipe name for URL (replace spaces with hyphens and special characters)
-    const nombreReceta = encodeURIComponent(props.title.toLowerCase().replace(/\s+/g, '-'));
+    // Format the recipe name for URL to match RecipeDetails format
+    const nombreReceta = props.title.toLowerCase().replace(/\s+/g, '-');
     navigate(`/recetas/${nombreReceta}`);
   };
 

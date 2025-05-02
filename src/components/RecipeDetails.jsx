@@ -18,7 +18,7 @@ import menu3 from "../assets/img/menu3.jpg";
 
 const recipes = [
   {
-    "nombre": "Bruschettas",
+    "nombre": "Bruschettas Caprese",
     "descripcion": "Pan tostado con tomate fresco, ajo, albahaca y aceite de oliva virgen extra.",
     "apto_celiacos": false,
     "alergenos": ["gluten"]
@@ -96,6 +96,12 @@ const recipes = [
     "alergenos": ["gluten", "lácteos", "huevo", "cafeína"]
   },
   {
+    "nombre": "Torta de Chocolate",
+    "descripcion": "Torta húmeda de chocolate y almendras, sin harina.",
+    "apto_celiacos": true,
+    "alergenos": ["lácteos", "huevo", "frutos secos"]
+  },
+  {
     "nombre": "Cannoli Siciliani",
     "descripcion": "Masa crujiente rellena de crema de ricota dulce, con chips de chocolate o fruta.",
     "apto_celiacos": false,
@@ -142,7 +148,7 @@ const RecipeDetails = () => {
                 recipe.nombre === "Pizza Prosciutto e Rucola" ? menu1 :
                 recipe.nombre === "Risotto" ? menu2 :
                 recipe.nombre === "Ravioli di Ricotta e Spinaci" ? menu3 :
-                recipe.nombre === "Bruschettas" ? img1 :
+                recipe.nombre === "Bruschettas Caprese" ? img1 :
                 recipe.nombre === "Melanzane alla parmigiana" ? img2 :
                 recipe.nombre === "Focaccia casera con rosmarino e olio d'oliva" ? img3 :
                 recipe.nombre === "Pizza Margherita" ? img4 :
@@ -153,6 +159,7 @@ const RecipeDetails = () => {
                 recipe.nombre === "Lasagna alla Napoletana" ? img9 :
                 recipe.nombre === "Tiramisú" ? img10 :
                 recipe.nombre === "Cannoli Siciliani" ? img11 :
+                recipe.nombre === "Torta de Chocolate" ? img12 :
                 recipe.nombre === "Torta Caprese" ? img12 : img1
               }
               alt={recipe.nombre}
