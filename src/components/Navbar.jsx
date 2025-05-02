@@ -186,14 +186,14 @@ const Navbar = () => {
             className="hover:text-brightColor transition-all cursor-pointer"
             onClick={closeMenu}
           >
-            Platos
+            Recomendados
           </Link>
           <Link
             to="review"
             spy={true}
             smooth={true}
             duration={500}
-            className=" hover:text-brightColor transition-all cursor-pointer"
+            className="hover:text-brightColor transition-all cursor-pointer"
             onClick={closeMenu}
           >
             Reseñas
