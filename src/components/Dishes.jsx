@@ -27,7 +27,7 @@ const Dishes = () => {
           <div className="flex flex-wrap gap-8 justify-center">
             <DishesCard img={img1} title="Bruschettas Caprese" price="$11.000" />
             <DishesCard img={img2} title="Melanzane alla parmigiana" price="$12.400" />
-            <DishesCard img={img3} title="Focaccia casera con romero y aceite de oliva" price="$11.800" />
+            <DishesCard img={img3} title="Focaccia casera con rosmarino e olio d'oliva" price="$11.800" />
           </div>
         </div>
 

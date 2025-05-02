@@ -25,13 +25,13 @@ const recipes = [
   },
   {
     "nombre": "Melanzane alla parmigiana",
-    "descripcion": "Berenjenas al horno con salsa de tomate, queso parmesano y albahaca.",
+    "descripcion": "Melanzane al forno con salsa di pomodoro, parmigiano e basilico.",
     "apto_celiacos": true,
     "alergenos": ["lácteos"]
   },
   {
-    "nombre": "Focaccia casera con romero y aceite de oliva",
-    "descripcion": "Pan esponjoso italiano con romero fresco y aceite de oliva.",
+    "nombre": "Focaccia casera con rosmarino e olio d'oliva",
+    "descripcion": "Focaccia italiana soffice con rosmarino fresco e olio d'oliva.",
     "apto_celiacos": false,
     "alergenos": ["gluten"]
   },
@@ -144,7 +144,7 @@ const RecipeDetails = () => {
                 recipe.nombre === "Ravioli di Ricotta e Spinaci" ? menu3 :
                 recipe.nombre === "Bruschettas" ? img1 :
                 recipe.nombre === "Melanzane alla parmigiana" ? img2 :
-                recipe.nombre === "Focaccia casera con romero y aceite de oliva" ? img3 :
+                recipe.nombre === "Focaccia casera con rosmarino e olio d'oliva" ? img3 :
                 recipe.nombre === "Pizza Margherita" ? img4 :
                 recipe.nombre === "Pizza Diavola" ? img5 :
                 recipe.nombre === "Pizza Quattro Formaggi" ? img6 :
