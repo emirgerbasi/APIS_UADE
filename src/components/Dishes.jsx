@@ -25,7 +25,7 @@ const Dishes = () => {
             Entradas
           </h1>
           <div className="flex flex-wrap gap-8 justify-center">
-            <DishesCard img={img1} title="Bruschettas" price="$11.000" />
+            <DishesCard img={img1} title="Bruschettas Caprese" price="$11.000" />
             <DishesCard img={img2} title="Melanzane alla parmigiana" price="$12.400" />
             <DishesCard img={img3} title="Focaccia casera con romero y aceite de oliva" price="$11.800" />
           </div>
@@ -60,7 +60,7 @@ const Dishes = () => {
           <div className="flex flex-wrap gap-8 justify-center">
             <DishesCard img={img10} title="Tiramisú" price="$14.000" />
             <DishesCard img={img11} title="Cannoli Siciliani" price="$15.000" />
-            <DishesCard img={img12} title="Torta Caprese" price="$16.400" />
+            <DishesCard img={img12} title="Torta de Chocolate" price="$16.400" />
           </div>
         </div>
       </div>
