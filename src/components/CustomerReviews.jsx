@@ -51,7 +51,7 @@ const CustomerReviews = () => {
 
   return (
     <div className="bg-black text-white py-16">
-      <h2 className="text-center text-3xl font-bold mb-8">Reseñas</h2>
+      <h2 className="text-4xl font-semibold text-center mb-8">Reseñas</h2>
       
       <div className="relative max-w-4xl mx-auto">
         <div className="flex items-center justify-center">
@@ -76,13 +76,15 @@ const CustomerReviews = () => {
           >
             <div className="bg-white rounded-xl shadow-lg p-6 relative">
               <p className="text-gray-700 mb-6">{reviews[currentIndex].text}</p>
-              <div className="flex items-center">
-                <img
-                  src={reviews[currentIndex].avatar}
-                  alt={reviews[currentIndex].name}
-                  className="w-12 h-12 rounded-full mr-3"
-                />
-                <span className="font-bold">{reviews[currentIndex].name}</span>
+              <div className="space-y-3">
+                <div className="flex justify-center">
+                  <img
+                    src={reviews[currentIndex].avatar}
+                    alt={reviews[currentIndex].name}
+                    className="w-20 h-20 rounded-full"
+                  />
+                </div>
+                <span className="font-bold text-center block">{reviews[currentIndex].name}</span>
               </div>
             </div>
           </div>
