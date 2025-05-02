@@ -40,6 +40,7 @@ const Navbar = () => {
               spy={true}
               smooth={true}
               duration={500}
+              offset={-80}
               className="hover:text-brightColor transition-all cursor-pointer"
             >
               Inicio
@@ -67,6 +68,7 @@ const Navbar = () => {
                     spy={true}
                     smooth={true}
                     duration={500}
+                    offset={-80}
                     className="text-gray-800 hover:text-brightColor transition-all cursor-pointer"
                   >
                     Entradas
@@ -78,6 +80,7 @@ const Navbar = () => {
                     spy={true}
                     smooth={true}
                     duration={500}
+                    offset={-80}
                     className="text-gray-800 hover:text-brightColor transition-all cursor-pointer"
                   >
                     Pizzas
@@ -89,6 +92,7 @@ const Navbar = () => {
                     spy={true}
                     smooth={true}
                     duration={500}
+                    offset={-80}
                     className="text-gray-800 hover:text-brightColor transition-all cursor-pointer"
                   >
                     Pastas
@@ -100,6 +104,7 @@ const Navbar = () => {
                     spy={true}
                     smooth={true}
                     duration={500}
+                    offset={-80}
                     className="text-gray-800 hover:text-brightColor transition-all cursor-pointer"
                   >
                     Postres
@@ -113,6 +118,7 @@ const Navbar = () => {
               spy={true}
               smooth={true}
               duration={500}
+              offset={-100}
               className="hover:text-brightColor transition-all cursor-pointer"
             >
               Sobre nosotros
@@ -123,6 +129,7 @@ const Navbar = () => {
               spy={true}
               smooth={true}
               duration={500}
+              offset={-80}
               className="hover:text-brightColor transition-all cursor-pointer"
             >
               Recomendados

@@ -7,7 +7,7 @@ import menu3 from "../assets/img/menu3.jpg";
 const Menu = () => {
   return (
     <div className="py-16 flex flex-col justify-center items-center lg:px-32 px-5">
-      <h1 className=" text-4xl font-semibold text-center pb-10">
+      <h1 className="text-4xl font-semibold text-center pb-10">
         Nuestros recomendados del mes
       </h1>
 
