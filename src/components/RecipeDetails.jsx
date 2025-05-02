@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import img1 from "../assets/img/img1.jpg";
 import img2 from "../assets/img/img2.jpg";
@@ -116,6 +116,9 @@ const recipes = [
 ];
 
 const RecipeDetails = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const navigate = useNavigate();
   const { nombreReceta } = useParams();
   // Convert URL parameter back to original format
@@ -186,3 +189,6 @@ const RecipeDetails = () => {
 };
 
 export default RecipeDetails;
+
+// Add this to prevent TypeScript errors
+RecipeDetails.displayName = 'RecipeDetails';
