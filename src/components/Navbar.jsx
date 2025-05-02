@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Link } from "react-scroll";
 import { BiRestaurant } from "react-icons/bi";
 import Button from "../layouts/Button";
@@ -8,6 +9,10 @@ import { AiOutlineClose } from "react-icons/ai";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
+  const location = useLocation();
+
+  // Show full navbar only on home page
+  const showFullNavbar = location.pathname === '/';
 
   const handleChange = () => {
     setMenu(!menu);
@@ -28,7 +33,8 @@ const Navbar = () => {
             <h1 className=" text-xl font-semibold">Il Vero Ristorante</h1>
           </div>
 
-          <nav className="hidden md:flex flex-row items-center text-lg font-medium gap-8">
+          {showFullNavbar && (
+            <nav className="hidden md:flex flex-row items-center text-lg font-medium gap-8">
             <Link
               to="home"
               spy={true}
@@ -134,6 +140,7 @@ const Navbar = () => {
 
 
           </nav>
+          )}
 
           <div className="md:hidden flex items-center">
             {menu ? (
