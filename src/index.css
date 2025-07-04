@@ -26,3 +26,24 @@ body {
   color: #000000;
 }
 
+/* Inputs y textareas curvos */
+input, textarea, select {
+  border-radius: 0.75rem;
+}
+
+/* Placeholder con transparencia */
+::placeholder {
+  color: #000000;
+  opacity: 0.6;
+}
+
+input::-webkit-input-placeholder { color: #000000; opacity: 0.6; }
+input:-moz-placeholder { color: #000000; opacity: 0.6; }
+input::-moz-placeholder { color: #000000; opacity: 0.6; }
+input:-ms-input-placeholder { color: #000000; opacity: 0.6; }
+
+/* Color negro para el texto de todos los inputs */
+input, textarea {
+  color: #000000;
+}
+

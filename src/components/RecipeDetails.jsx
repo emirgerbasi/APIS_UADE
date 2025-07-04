@@ -1,181 +1,174 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import img1 from "../assets/img/img1.jpg";
-import img2 from "../assets/img/img2.jpg";
-import img3 from "../assets/img/img3.jpg";
-import img4 from "../assets/img/img4.jpg";
-import img5 from "../assets/img/img5.jpg";
-import img6 from "../assets/img/img6.jpg";
-import img7 from "../assets/img/img7.jpg";
-import img8 from "../assets/img/img8.jpg";
-import img9 from "../assets/img/img9.jpg";
-import img10 from "../assets/img/img10.jpg";
-import img11 from "../assets/img/img11.jpg";
-import img12 from "../assets/img/img12.jpg";
-import menu1 from "../assets/img/menu1.jpg";
-import menu2 from "../assets/img/menu2.jpg";
-import menu3 from "../assets/img/menu3.jpg";
-
-const recipes = [
-  {
-    "nombre": "Bruschettas Caprese",
-    "descripcion": "Pan tostado con tomate fresco, ajo, albahaca y aceite de oliva virgen extra.",
-    "apto_celiacos": false,
-    "alergenos": ["gluten"]
-  },
-  {
-    "nombre": "Melanzane alla parmigiana",
-    "descripcion": "Melanzane al forno con salsa di pomodoro, parmigiano e basilico.",
-    "apto_celiacos": true,
-    "alergenos": ["lácteos"]
-  },
-  {
-    "nombre": "Focaccia casera con rosmarino e olio d'oliva",
-    "descripcion": "Focaccia italiana soffice con rosmarino fresco e olio d'oliva.",
-    "apto_celiacos": false,
-    "alergenos": ["gluten"]
-  },
-  {
-    "nombre": "Pizza Margherita",
-    "descripcion": "Clásica pizza con salsa de tomate, mozzarella y albahaca fresca.",
-    "apto_celiacos": false,
-    "alergenos": ["gluten", "lácteos"]
-  },
-  {
-    "nombre": "Pizza Diavola",
-    "descripcion": "Pizza con salsa de tomate, mozzarella y salame picante.",
-    "apto_celiacos": false,
-    "alergenos": ["gluten", "lácteos"]
-  },
-  {
-    "nombre": "Pizza Quattro Formaggi",
-    "descripcion": "Pizza con mezcla de cuatro quesos italianos.",
-    "apto_celiacos": false,
-    "alergenos": ["gluten", "lácteos"]
-  },
-  {
-    "nombre": "Pizza Prosciutto e Rucola",
-    "descripcion": "Pizza con jamón crudo, rúcula fresca y lascas de parmesano.",
-    "apto_celiacos": false,
-    "alergenos": ["gluten", "lácteos"]
-  },
-  {
-    "nombre": "Spaghetti alla Carbonara",
-    "descripcion": "Pasta con panceta, huevo y queso pecorino romano.",
-    "apto_celiacos": false,
-    "alergenos": ["gluten", "huevo", "lácteos"]
-  },
-  {
-    "nombre": "Ñoquis di Patata al Pesto",
-    "descripcion": "Ñoquis de papa caseros con salsa pesto de albahaca y piñones.",
-    "apto_celiacos": false,
-    "alergenos": ["gluten", "lácteos", "frutos secos"]
-  },
-  {
-    "nombre": "Lasagna alla Napoletana",
-    "descripcion": "Capas de pasta, salsa de carne, ricota y mozzarella gratinada.",
-    "apto_celiacos": false,
-    "alergenos": ["gluten", "lácteos", "huevo"]
-  },
-  {
-    "nombre": "Risotto de hongos",
-    "descripcion": "Arroz cremoso con setas seleccionadas, vino blanco y parmesano.",
-    "apto_celiacos": true,
-    "alergenos": ["lácteos", "sulfitos"]
-  },
-  {
-    "nombre": "Ravioli di Ricotta e Spinaci",
-    "descripcion": "Pasta rellena de ricota y espinaca, con manteca y salvia o salsa a elección.",
-    "apto_celiacos": false,
-    "alergenos": ["gluten", "lácteos", "huevo"]
-  },
-  {
-    "nombre": "Tiramisú",
-    "descripcion": "Postre frío de capas de mascarpone, bizcochos empapados en café y cacao.",
-    "apto_celiacos": false,
-    "alergenos": ["gluten", "lácteos", "huevo", "cafeína"]
-  },
-  {
-    "nombre": "Torta de Chocolate",
-    "descripcion": "Torta húmeda de chocolate y almendras, sin harina.",
-    "apto_celiacos": true,
-    "alergenos": ["lácteos", "huevo", "frutos secos"]
-  },
-  {
-    "nombre": "Cannoli Siciliani",
-    "descripcion": "Masa crujiente rellena de crema de ricota dulce, con chips de chocolate o fruta.",
-    "apto_celiacos": false,
-    "alergenos": ["gluten", "lácteos", "huevo"]
-  },
-  {
-    "nombre": "Torta Caprese",
-    "descripcion": "Torta húmeda de chocolate y almendras, sin harina.",
-    "apto_celiacos": true,
-    "alergenos": ["lácteos", "huevo", "frutos secos"]
-  },
-  {
-    "nombre": "Risotto",
-    "descripcion": "Arroz cremoso con setas seleccionadas, vino blanco y parmesano.",
-    "apto_celiacos": true,
-    "alergenos": ["lácteos", "sulfitos"]
-  }
-];
+import { getDishes } from '../services/api';
+import config from '../config/config';
 
 const RecipeDetails = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const [dish, setDish] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [imageError, setImageError] = useState(false);
   const navigate = useNavigate();
   const { nombreReceta } = useParams();
-  // Convert URL parameter back to original format
-  const originalNombre = nombreReceta.replace(/-/g, ' ');
-  const recipe = recipes.find(r => r.nombre.toLowerCase() === originalNombre.toLowerCase());
 
-  if (!recipe) {
-    return <div className="min-h-screen flex items-center justify-center">Receta no encontrada</div>;
+  // Función para manejar la URL de la imagen (igual que en DishesCard)
+  const getImageUrl = (imgPath) => {
+    if (!imgPath) return ''; // Manejar caso de imagen no definida
+    
+    try {
+      // Si es una importación directa (objeto con default)
+      if (typeof imgPath === 'object' && imgPath.default) {
+        return imgPath.default;
+      }
+      
+      // Si es una importación directa (objeto)
+      if (typeof imgPath === 'object') {
+        return imgPath;
+      }
+      
+      // Si es una URL completa
+      if (imgPath.startsWith('http') || imgPath.startsWith('data:')) {
+        return imgPath;
+      }
+      
+      // Si la ruta ya comienza con /img
+      if (imgPath.startsWith('/img')) {
+        return `${config.IMAGES_URL}${imgPath}`;
+      }
+      
+      // En cualquier otro caso, construir la ruta completa
+      return `${config.IMAGES_URL}/img/${imgPath}`;
+    } catch (error) {
+      console.error('Error processing image path:', error);
+      return '';
+    }
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    fetchDish();
+  }, [nombreReceta]);
+
+  const fetchDish = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      
+      // Convert URL parameter back to original format
+      const originalNombre = nombreReceta.replace(/-/g, ' ');
+      
+      // Get all dishes from API
+      const response = await getDishes();
+      const allDishes = response.data;
+      
+      // Find the dish by title (case insensitive)
+      const foundDish = allDishes.find(d => 
+        d.title.toLowerCase() === originalNombre.toLowerCase()
+      );
+
+      if (!foundDish) {
+        setError('Plato no encontrado');
+        return;
+      }
+
+      setDish(foundDish);
+    } catch (error) {
+      console.error('Error fetching dish:', error);
+      setError('Error al cargar el plato');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-2xl">Cargando plato...</div>
+      </div>
+    );
+  }
+
+  if (error || !dish) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-2xl text-red-600 mb-4">{error || 'Plato no encontrado'}</div>
+          <button 
+            onClick={() => navigate('/')}
+            className="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
+          >
+            Volver al Inicio
+          </button>
+        </div>
+      </div>
+    );
   }
 
   return (
     <div className="py-16 px-5 lg:px-32">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-semibold text-center mb-8 text-white">{recipe.nombre}</h1>
+        <h1 className="text-4xl font-semibold text-center mb-8 text-white">{dish.title}</h1>
         
         <div className="space-y-8">
           <div className="aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden w-3/4 mx-auto">
             <img
               className="w-full h-full object-cover"
-              src={
-                recipe.nombre === "Pizza Prosciutto e Rucola" ? menu1 :
-                recipe.nombre === "Risotto" ? menu2 :
-                recipe.nombre === "Ravioli di Ricotta e Spinaci" ? menu3 :
-                recipe.nombre === "Bruschettas Caprese" ? img1 :
-                recipe.nombre === "Melanzane alla parmigiana" ? img2 :
-                recipe.nombre === "Focaccia casera con rosmarino e olio d'oliva" ? img3 :
-                recipe.nombre === "Pizza Margherita" ? img4 :
-                recipe.nombre === "Pizza Diavola" ? img5 :
-                recipe.nombre === "Pizza Quattro Formaggi" ? img6 :
-                recipe.nombre === "Spaghetti alla Carbonara" ? img7 :
-                recipe.nombre === "Ñoquis di Patata al Pesto" ? img8 :
-                recipe.nombre === "Lasagna alla Napoletana" ? img9 :
-                recipe.nombre === "Tiramisú" ? img10 :
-                recipe.nombre === "Cannoli Siciliani" ? img11 :
-                recipe.nombre === "Torta de Chocolate" ? img12 :
-                recipe.nombre === "Torta Caprese" ? img12 : img1
-              }
-              alt={recipe.nombre}
+              src={getImageUrl(dish.imageUrl)}
+              alt={dish.title}
+              onError={(e) => {
+                if (!imageError) {
+                  setImageError(true);
+                  // Intenta cargar la imagen desde assets si falla la carga desde el servidor
+                  try {
+                    const imgNumber = dish.imageUrl.match(/img(\d+)/)?.[1];
+                    if (imgNumber) {
+                      import(`../assets/img/img${imgNumber}.jpg`)
+                        .then(image => {
+                          e.target.src = image.default;
+                        })
+                        .catch(() => {
+                          e.target.src = '/placeholder.jpg';
+                        });
+                    } else {
+                      e.target.src = '/placeholder.jpg';
+                    }
+                  } catch {
+                    e.target.src = '/placeholder.jpg';
+                  }
+                }
+              }}
+              style={{ opacity: imageError ? 0.9 : 1 }}
             />
           </div>
 
           <div className="space-y-4 w-3/4 mx-auto">
             <h2 className="text-2xl font-semibold text-white">Descripción</h2>
-            <p className="text-white leading-relaxed">{recipe.descripcion}</p>
+            <p className="text-white leading-relaxed">{dish.description}</p>
           </div>
 
+          {dish.ingredients && dish.ingredients.length > 0 && (
+            <div className="space-y-4 w-3/4 mx-auto">
+              <h2 className="text-2xl font-semibold text-white">Ingredientes</h2>
+              <ul className="text-white list-disc list-inside space-y-1">
+                {dish.ingredients.map((ingredient, index) => (
+                  <li key={index}>{ingredient}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {dish.recipe && (
+            <div className="space-y-4 w-3/4 mx-auto">
+              <h2 className="text-2xl font-semibold text-white">Receta</h2>
+              <p className="text-white leading-relaxed whitespace-pre-line">{dish.recipe}</p>
+            </div>
+          )}
+
           <div className="space-y-4 w-3/4 mx-auto">
-            <h2 className="text-2xl font-semibold text-white">Información Nutricional</h2>
+            <h2 className="text-2xl font-semibold text-white">Información del Plato</h2>
             <div className="space-y-2">
-              <p className="text-white">Apto para celiacos: {recipe.apto_celiacos ? 'Sí' : 'No'}</p>
-              <p className="text-white">Alergenos: {recipe.alergenos.join(', ')}</p>
+              <p className="text-white">Categoría: {dish.category}</p>
+              <p className="text-white">Precio: ${dish.price.toLocaleString()}</p>
             </div>
             <button 
               onClick={() => navigate(-1)}

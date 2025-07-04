@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-scroll";
 import { BiRestaurant } from "react-icons/bi";
 import Button from "../layouts/Button";
@@ -10,6 +10,7 @@ import { AiOutlineClose } from "react-icons/ai";
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Show full navbar only on home page
   const showFullNavbar = location.pathname === '/';
@@ -22,11 +23,24 @@ const Navbar = () => {
     setMenu(false);
   };
 
+  // Manejar click en el slogan
+  const handleSloganClick = () => {
+    if (location.pathname === '/') {
+      // Scroll suave al inicio
+      const homeSection = document.getElementById('home');
+      if (homeSection) {
+        homeSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/');
+    }
+  };
+
   return (
     <div className="fixed w-full z-50">
       <div>
         <div className="flex flex-row justify-between p-5 md:px-32 px-5 bg-black text-white shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
-          <div className=" flex flex-row items-center cursor-pointer">
+          <div className=" flex flex-row items-center cursor-pointer" onClick={handleSloganClick} title="Ir al inicio">
             <span>
               <BiRestaurant size={32} />
             </span>
