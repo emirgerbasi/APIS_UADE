@@ -7,9 +7,15 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node backend/scripts/seedDatabase.js"
   },
+  "keywords": [],
+  "author": "",
   "dependencies": {
+    "axios": "^1.9.0",
     "framer-motion": "^12.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
